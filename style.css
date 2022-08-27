@@ -1,89 +1,90 @@
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
-
 :root{
-    --primary-color: #F5CF06;
+    --primary-color:#F5CF06;
     --secondary-color: #8E4106;
-    --white: #ffffff;
-    --default-space: 70px;
-} 
-
+    --white: #FFFFFF;
+    --space-default : 70px;
+}
 body{
     height: 100vh;
     background-color: var(--primary-color);
     display: flex;
     flex-direction: column;
-    padding-left: var(--default-space);
-    padding-top: var(--default-space);
-    padding-right: var(--default-space);
+    padding-top: var(--space-default);
+    padding-right: var(--space-default);
     padding-bottom: 24px;
+    padding-left: var(--space-default);
     font-family: 'Righteous', cursive;
 }
 
 header{
     height: 48px;
 }
-
 .logo{
     display: inline-flex;
-    flex-direction: row;
-    align-items: center;
     gap: 16px;
+    align-items: center;
+    font-size: 2rem;
     text-decoration: none;
     color: var(--secondary-color);
-    font-size: 2rem;
+   
 }
-
 main{
-    flex-grow: 1;
+    
+    flex-grow: 1;  
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(12,1fr);
 }
-
+.pikachu{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    z-index: 1;
+}
 .title{
-    grid-column: 1/-1;
-    place-self: center;
     position: relative;
-}
+    grid-column: 1/-1;
+    place-self: end center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+}
 .title__text{
     font-size: 20vw;
     color: var(--white);
 }
-
 .title__transparent{
-    font-size: 27vw;
-    color: #FFFFFF55;
     position: absolute;
-    left: 50%;
-    top: -50%;
-    transform: translateX(-50%);
+    font-size: 27vw;
     z-index: -1;
-}
+    transform: translateY(-35%);
+    color: #FFFFFF55;
 
+}
 .description{
     grid-column: 1/7;
     place-self: center start;
     color: var(--secondary-color);
+    z-index: 1;
 }
-
 .description__title{
     font-size: 4rem;
 }
-
 .description__text{
     font-size: 1.2rem;
-    width: 490px;
+    width: 500px;
 }
-
 .action{
-    grid-column: 8/-1;
+    grid-column: 7/-1;
     place-self: center end;
-    height: 100px;
     width: 411px;
+    height: 100px;
     background-color: var(--secondary-color);
     display: flex;
     justify-content: center;
@@ -91,9 +92,10 @@ main{
     color: var(--white);
     font-size: 3rem;
     text-decoration: none;
+   
 }
-
 footer{
+    font-size: 1rem;
     text-align: center;
     color: var(--secondary-color);
 }
